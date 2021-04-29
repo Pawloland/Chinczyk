@@ -16,7 +16,7 @@ export default class Synth {
                 ifLog.log('SpeechSynthesisUtterance.onend');
             }
             utterThis.onerror = function (event) {
-                ifLog.error('SpeechSynthesisUtterance.onerror');
+                ifLog.log('SpeechSynthesisUtterance.onerror');
             }
             this.synth.speak(utterThis);
         }
