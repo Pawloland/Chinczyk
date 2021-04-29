@@ -19,7 +19,7 @@ export default class Session {
     }
 
     async getPlaces() {
-        const response = await fetch('http://localhost:3000/places', {
+        const response = await fetch('/places', {
             method: 'GET'
         })
         if (!response.ok) {
@@ -60,7 +60,7 @@ export default class Session {
     async login(nick) {
         const headers = { 'Content-Type': 'application/json;charset=utf-8' } // nagłówek
         const body = JSON.stringify({ nick: nick }) // body - dane
-        const response = await fetch('http://localhost:3000/login', {
+        const response = await fetch('/login', {
             method: 'POST',
             headers,
             body
@@ -80,7 +80,7 @@ export default class Session {
             session_id: this.session_id,
             status: status,
         }) // body - dane
-        const response = await fetch('http://localhost:3000/changePlayerStatus', {
+        const response = await fetch('/changePlayerStatus', {
             method: 'POST',
             headers,
             body
@@ -100,7 +100,7 @@ export default class Session {
 
         let response
         try {
-            response = await fetch('http://localhost:3000/getCurrentData', {
+            response = await fetch('/getCurrentData', {
                 method: 'POST',
                 headers,
                 body
@@ -158,7 +158,7 @@ export default class Session {
     async rollDice() {
         const headers = { 'Content-Type': 'application/json;charset=utf-8' } // nagłówek
         const body = JSON.stringify({ player_id: this.player_id, session_id: this.session_id }) // body - dane
-        const response = await fetch('http://localhost:3000/rollDice', {
+        const response = await fetch('/rollDice', {
             method: 'POST',
             headers,
             body
@@ -174,7 +174,7 @@ export default class Session {
     async movePiece(piece) {
         const headers = { 'Content-Type': 'application/json;charset=utf-8' } // nagłówek
         const body = JSON.stringify({ piece: piece, player_id: this.player_id, session_id: this.session_id }) // body - dane
-        const response = await fetch('http://localhost:3000/movePiece', {
+        const response = await fetch('/movePiece', {
             method: 'POST',
             headers,
             body
