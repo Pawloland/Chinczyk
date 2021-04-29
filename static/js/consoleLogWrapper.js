@@ -14,7 +14,7 @@ class DebugLog {
     }
 }
 
-let log = true
+let log = false
 const ifLog = new DebugLog(log)
 export default ifLog // to jest default export, czyli w script.js nie trzeba miec takiej samej nazwy jak ifLog, może być dowolna
 
