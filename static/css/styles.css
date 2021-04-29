@@ -1,0 +1,178 @@
+body {
+    background-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#outer {
+    position: absolute;
+    width:100%;
+    height: 100%;
+}
+
+#login_div {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#game_div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#top{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+#top div {
+    position: relative;
+    border-radius:30px;
+    border: 2px solid white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-weight: bold;
+    font-size: 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    margin: 10px 0;
+    overflow: visible;
+    max-width: calc(100% / 4 );
+}
+
+#top div .nick {
+    overflow: hidden;
+}
+
+#top div .timer {
+    width: 22px;
+    height: 22px;
+    border: 2px solid white;
+    background-color: inherit;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    top: -7px;
+    right: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+.pale {
+    color: white !important;
+}
+
+#red {
+    background-color: #FF0000;
+    color: #FFDACF;
+}
+
+#red.pale{
+    background-color: #FFDACF;
+}
+
+#blue {
+    background-color: #0000FF;
+    color: #B0E0EA;
+}
+
+#blue.pale {
+    background-color: #B0E0EA;
+}
+
+#green{
+    background-color: #008000;
+    color: #BCEBBD;
+}
+
+#green.pale{
+    background-color: #BCEBBD;
+}
+
+#yellow{
+    background-color: #FFFF00;
+    color: #FFFEA1;
+}
+
+#yellow.pale{
+    background-color: #FFFEA1;
+}
+
+#ready_div {
+    width: 100%;
+    padding: 0 12px;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+}
+
+#dice_area {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
+    align-items: center;
+}
+
+#dice_area #dice_img {
+    height: 100px;
+    width: 100px;
+    /* background-image: url("/img/1.png"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#playboard {
+    box-sizing: border-box;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: relative;
+    max-height: calc(100% - 60px);
+}
+
+#playboard canvas{
+    max-height: 100%;
+    position: absolute;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+    /* border: 3px solid red; */
+    box-sizing: border-box;
+}
+
+#debug {
+    position: absolute;
+    top:50px;
+    right:5px;
+    display: none;
+}
+
+
+.m5{
+    margin:5px;
+}
+
+.hidden {
+    display: none !important;
+}
+

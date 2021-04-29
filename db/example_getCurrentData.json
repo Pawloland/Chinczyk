@@ -1,0 +1,63 @@
+{
+    "status": "playing",
+    "winner": null,
+    "reset_mainloop": false,
+    "current_move": "blue",
+    "move_start_time": 1619726943857,
+    "move_end_time": 1619727003857,
+    "players": {
+        "red": {
+            "nick": "1",
+            "id": "YnV9quu0ZfsR9FoK",
+            "can_draw": false,
+            "was_moved": false,
+            "drawn_number": 2,
+            "status": true,
+            "pieces": {
+                "first": 0,
+                "second": 0,
+                "third": 0,
+                "fourth": 0
+            }
+        },
+        "blue": {
+            "nick": "1",
+            "id": "jInTEc9zEp8kOnlQ",
+            "can_draw": true,
+            "was_moved": true,
+            "drawn_number": 1,
+            "status": true,
+            "pieces": {
+                "first": 0,
+                "second": 0,
+                "third": 1,
+                "fourth": 0
+            }
+        },
+        "green": {
+            "can_draw": false,
+            "was_moved": false,
+            "drawn_number": null,
+            "status": false,
+            "pieces": {
+                "first": 0,
+                "second": 0,
+                "third": 0,
+                "fourth": 0
+            }
+        },
+        "yellow": {
+            "can_draw": false,
+            "was_moved": false,
+            "drawn_number": null,
+            "status": false,
+            "pieces": {
+                "first": 0,
+                "second": 0,
+                "third": 0,
+                "fourth": 0
+            }
+        }
+    },
+    "_id": "zahNqrkbEp00gdn0"
+}

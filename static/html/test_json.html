@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Json</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            width: 1200px;
+            height: 1200px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            /* position: absolute; */
+        }
+
+        .abs {
+            position: absolute;
+            box-sizing: border-box;
+            background-color: rgb(48, 48, 48);
+            width: 52px;
+            height: 52px;
+            color: white;
+            font-size: 30px;
+            font-weight: bolder;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .color {
+            position: absolute;
+            padding: 10px;
+            padding: 10px;
+            color: white;
+            font-size: 30px;
+            font-weight: bolder;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function testData(obj, main_color) {
+            for (let i = 0; i <= 44; i++) {
+                if (i == 0) {
+                    for (let color of ['red', 'blue', 'green', 'yellow']) {
+                        for (let place of ['first', 'second', 'third', 'fourth']) {
+                            let div = document.createElement('div')
+                            div.className = 'abs'
+                            div.style.top = obj[`place_${i}`][color][place].top + 'px'
+                            div.style.left = obj[`place_${i}`][color][place].left + 'px'
+
+                            if (main_color == color) {
+                                div.innerText = i
+                            }
+
+                            document.body.append(div)
+                        }
+                    }
+
+                } else if (i > 40) {
+                    for (let color of ['red', 'blue', 'green', 'yellow']) {
+                        let div = document.createElement('div')
+                        div.className = 'abs'
+                        div.style.top = obj[`place_${i}`][color].top + 'px'
+                        div.style.left = obj[`place_${i}`][color].left + 'px'
+
+                        if (main_color == color) {
+                            div.innerText = i
+                        }
+
+                        document.body.append(div)
+                    }
+                } else {
+                    let div = document.createElement('div')
+                    div.className = 'abs'
+                    div.style.top = obj[`place_${i}`][main_color].top + 'px'
+                    div.style.left = obj[`place_${i}`][main_color].left + 'px'
+
+                    div.innerText = i
+
+                    document.body.append(div)
+                }
+            }
+
+            let div = document.createElement('div')
+            div.style.top = 600 + 'px'
+            div.style.left = 600 + 'px'
+            div.className = 'color'
+
+            div.innerText = main_color
+            div.style.backgroundColor = main_color
+            document.body.append(div)
+
+        }
+        async function init() {
+            // const headers = { 'Content-Type': 'application/json;charset=utf-8' } // nagłówek
+            // const body = JSON.stringify({ nick: nick }) // body - dane
+            const response = await fetch('http://localhost:3000/places', {
+                method: 'GET'
+            })
+            if (!response.ok) {
+                return await respose.status
+            } else {
+                let response_decoded = await response.json()
+                console.log(response_decoded)
+                // return response_decoded
+                let copy_obj = JSON.parse(JSON.stringify(response_decoded))
+                for (let i = 1; i <= 40; i++) {
+
+                    copy_obj[`place_${i}`].blue.top = (i <= 30) ? response_decoded[`place_${(i + 10)}`].red.top : response_decoded[`place_${(i - 30)}`].red.top
+                    copy_obj[`place_${i}`].blue.left = (i <= 30) ? response_decoded[`place_${i + 10}`].red.left : response_decoded[`place_${(i - 30)}`].red.left
+
+                    copy_obj[`place_${i}`].green.top = (i <= 20) ? response_decoded[`place_${(i + 20)}`].red.top : response_decoded[`place_${(i - 20)}`].red.top
+                    copy_obj[`place_${i}`].green.left = (i <= 20) ? response_decoded[`place_${(i + 20)}`].red.left : response_decoded[`place_${(i - 20)}`].red.left
+
+
+                    copy_obj[`place_${i}`].yellow.top = (i <= 10) ? response_decoded[`place_${(i + 30)}`].red.top : response_decoded[`place_${(i - 10)}`].red.top
+                    copy_obj[`place_${i}`].yellow.left = (i <= 10) ? response_decoded[`place_${(i + 30)}`].red.left : response_decoded[`place_${(i - 10)}`].red.left
+                }
+                console.log(JSON.stringify(copy_obj))
+                testData(response_decoded, 'red')
+
+            }
+        }
+        init()
+    </script>
+</body>
+
+</html>

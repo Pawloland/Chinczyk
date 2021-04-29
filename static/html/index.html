@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<!-- bez deklaracji języka, żeby speachsynthesis działało automatycznie z językiem systemu -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <title>Chińczyk</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/toogle.css">
+    <script type="module" src="/js/script.js"></script>
+
+</head>
+
+<body>
+    <div id="outer">
+        <div id="login_div" class="hidden">
+            <label class="m5" for="nick">Twój nick</label>
+            <input class="m5" type="text" name="nick" id="nick">
+            <input class="m5" id="submit_name" type="submit" id="ok" value="Ok">
+        </div>
+        <div id="game_div" class="hidden">
+            <div id="top">
+                <div id="red" class="pale">
+                    <span class="nick">?</span>
+                    <span class="timer hidden"></span>
+                </div>
+                <div id="blue" class="pale">
+                    <span class="nick">?</span>
+                    <span class="timer hidden"></span>
+                </div>
+                <div id="green" class="pale">
+                    <span class="nick">?</span>
+                    <span class="timer hidden"></span>
+                </div>
+                <div id="yellow" class="pale">
+                    <span class="nick">?</span>
+                    <span class="timer hidden"></span>
+                </div>
+            </div>
+            <div id="ready_div">
+                <label id="ready_label" class="toggle-control hidden">
+                    <input id="ready_input" type="checkbox">
+                    <span class="control"></span>
+                    Czekam na innych graczy
+                </label>
+                <div id="dice_area" class="hidden">
+                    <button id="roll_dice_bt" disabled>Rzuć kostkę</button>
+                    <div id="dice_img"></div>
+                </div>
+            </div>
+            <div id="playboard">
+                <canvas width="1200" height="1200">
+                </canvas>
+            </div>
+            <div id="debug">
+                to juz jest gra
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
