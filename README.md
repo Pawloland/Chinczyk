@@ -1,3 +1,3 @@
 # Chinczyk
 Gra sieciowa Chińczyk.
-https://pawel-maczalowski-chinczyk.herokuapp.com/
+https://chinczyk-yp8d.onrender.com/
